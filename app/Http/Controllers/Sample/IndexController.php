@@ -20,7 +20,7 @@ class IndexController extends Controller
      * @return string
      */
     public function showId($id)
-    
+    {
         return "Hello {$id}";
     }
 }
