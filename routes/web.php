@@ -17,5 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Sample
 Route::get('/sample', [\App\Http\Controllers\Sample\IndexController::class, 'show']);
 Route::get('/sample/{id}', [\App\Http\Controllers\Sample\IndexController::class, 'showId']);
+
+// Tweets
+Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class);
