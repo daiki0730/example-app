@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Tweet;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tweet;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * つぶやき一覧
      *
      * @param Request $request
-     * @return string
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function __invoke(Request $request)
     {
-        return view('tweet.index')->with('name', 'daiki');
+        $tweets = Tweet::all();
+        return view('tweet.index')
+            ->with('tweets', $tweets);
     }
 }
