@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     /**
-     * つぶやき一覧
-     *
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
