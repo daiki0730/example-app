@@ -28,8 +28,19 @@ class UpdateRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string
+     */
     public function tweet(): string
     {
         return $this->input('tweet');
+    }
+
+    /**
+     * @return string
+     */
+    public function id(): string
+    {
+        return (int)$this->route('tweetId');
     }
 }
