@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Tweet\Update;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\Tweet\UpdateRequest;
 use App\Models\Tweet;
 
@@ -11,9 +10,8 @@ class PutController extends Controller
 {
     /**
      * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param UpdateRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function __invoke(UpdateRequest $request)
     {
