@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class CreateRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.w
+     * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
@@ -28,9 +28,12 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    /**
-     * @return string
-     */
+    // Requestクラスのuser関数で今自分がログインしているユーザーが取得できる
+    public function userId(): int
+    {
+        return $this->user()->id;
+    }
+
     public function tweet(): string
     {
         return $this->input('tweet');

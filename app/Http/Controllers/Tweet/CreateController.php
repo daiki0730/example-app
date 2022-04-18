@@ -8,14 +8,10 @@ use App\Models\Tweet;
 
 class CreateController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param CreateRequest $request
-     */
     public function __invoke(CreateRequest $request)
     {
         $tweet = new Tweet;
+        $tweet->user_id = $request->userId(); // ここでUserIdを保存している
         $tweet->content = $request->tweet();
         $tweet->save();
         return redirect()->route('tweet.index');
