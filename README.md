@@ -40,6 +40,11 @@ $ docker run --rm \
     -w /var/www/html \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
+// Laravel Mixインストール
+$ sail npm install
+// Tailwind CSS導入
+$ sail npm install -D tailwindcss
+$ sail npx tailwindcss init
 ```
 ## 各種コマンド
 
@@ -62,6 +67,10 @@ $ sail composer {command}
 $ sail node {command}
 // npmコマンド実行
 $ sail npm {command}
+// Laravel Mix コンパイル
+sail npm run development
+// Laravel Mix コンパイルデーモン
+sail npm run watch
 ```
 - アプリケーション用のコンテナに入る
 ```
