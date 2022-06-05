@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+        Schema::create('tweet_images', function (Blueprint $table) {
+            $table->foreignId('tweet_id')->constrained('tweets')->cascadeOnDelete();
+            $table->foreignId('image_id')->constrained('images')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('tweet_images');
     }
 };
